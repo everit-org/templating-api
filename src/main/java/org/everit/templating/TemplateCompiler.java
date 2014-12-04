@@ -20,9 +20,9 @@ public interface TemplateCompiler {
      *
      * @param template
      *            The template that will be parsed and compiled.
-     * @param parserContext
-     *            The clone context that the template is parsed in or null if there is no current context.
+     * @param parserConfiguration
+     *            Configuration of the parser.
      * @return The compiled template that can be used to render output text.
      */
-    CompiledTemplate compile(Reader template, ParserConfiguration parserContext);
+    CompiledTemplate compile(Reader template, ParserConfiguration parserConfiguration);
 }
