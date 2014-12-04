@@ -2,7 +2,7 @@ package org.everit.templating;
 
 import java.io.Reader;
 
-import org.everit.expression.ParserContext;
+import org.everit.expression.ParserConfiguration;
 
 public interface TemplateCompiler {
 
@@ -24,5 +24,5 @@ public interface TemplateCompiler {
      *            The clone context that the template is parsed in or null if there is no current context.
      * @return The compiled template that can be used to render output text.
      */
-    CompiledTemplate compile(Reader template, ParserContext parserContext);
+    CompiledTemplate compile(Reader template, ParserConfiguration parserContext);
 }
