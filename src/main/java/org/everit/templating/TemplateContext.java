@@ -16,6 +16,8 @@
  */
 package org.everit.templating;
 
+import java.util.Map;
+
 /**
  * The template context instance should be available as a variable with the
  * {@link TemplateConstants#VAR_TEMPLATE_CONTEXT} name.
@@ -29,6 +31,8 @@ public interface TemplateContext {
      */
     String getFragmentId();
 
-    String renderFragment(String bookmark);
+    String renderFragment(String fragmentId);
+
+    String renderFragment(String fragmentId, Map<String, Object> parameters);
 
 }
