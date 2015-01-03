@@ -25,14 +25,33 @@ import java.util.Map;
 public interface TemplateContext {
 
     /**
-     * The bookmark of the template that is rendered. In case the full template is rendered, the
-     *
-     * @return The bookmark.
+     * @return the id of the fragment of the template that was called to be rendered. In case the whole template is
+     *         rendered, {@link TemplateConstants#FRAGMENT_ROOT} is returned.
      */
     String getFragmentId();
 
+    /**
+     * Renders one of the fragments of the current template. The variables that are declared / assigned within the
+     * fragment are not visible outside. Variables that are already declared / assigned outside are visible within the
+     * fragment.
+     *
+     * @param fragmentId
+     *            The id of the fragment.
+     * @return The rendered fragment.
+     */
     String renderFragment(String fragmentId);
 
+    /**
+     * Renders one of the fragments of the current template. The variables that are declared / assigned within the
+     * fragment are not visible outside. Variables that are already declared / assigned outside are visible within the
+     * fragment.
+     *
+     * @param fragmentId
+     *            The id of the fragment.
+     * @param parameters
+     *            Map of variables that are also visible during rendering the fragment.
+     * @return The rendered fragment.
+     */
     String renderFragment(String fragmentId, Map<String, Object> parameters);
 
 }

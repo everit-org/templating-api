@@ -1,4 +1,4 @@
 templating-api
 ==============
 
-API of templating engines
+API of templating engines.

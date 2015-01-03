@@ -18,10 +18,31 @@ package org.everit.templating;
 
 import org.everit.expression.ParserConfiguration;
 
+/**
+ * Standard Interface of template compilers.
+ */
 public interface TemplateCompiler {
 
     /**
-     * Compiles an expression within the given parser context.
+     * Compiles a template. By calling this method, the implementation of the template compiler might save memory by
+     * re-using the passed character array. The {@link ParserConfiguration#getStartRow()} and
+     * {@link ParserConfiguration#getStartColumn()} values should point to the place of {@code expressionStart}.
+     *
+     * @param document
+     *            The full document that contains the template.
+     * @param templateStart
+     *            The starting position of the template within the document.
+     * @param templateLength
+     *            The length of the template in character number.
+     * @param parserConfiguration
+     *            Configuration of the parser.
+     * @return The compiled template that can be used to render output text.
+     */
+    CompiledTemplate compile(char[] document, int templateStart, int templateLength,
+            ParserConfiguration parserConfiguration);
+
+    /**
+     * Compiles a template.
      *
      * @param template
      *            The template that will be parsed and compiled.
