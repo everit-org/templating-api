@@ -32,8 +32,6 @@ public interface CompiledTemplate {
      *            The output of the template will be written to the writer.
      * @param vars
      *            The variables that will be used during the template rendering.
-     * @throws RenderException
-     *             if any exception occurs during rendering.
      */
     void render(Writer writer, Map<String, Object> vars);
 
@@ -47,8 +45,6 @@ public interface CompiledTemplate {
      * @param fragmentId
      *            Identifies the part of the template that should be rendered. In case the fragment is null, the full
      *            template will be rendered.
-     * @throws RenderException
-     *             if any exception occurs during rendering.
      */
     void render(Writer writer, Map<String, Object> vars, String fragmentId);
 
