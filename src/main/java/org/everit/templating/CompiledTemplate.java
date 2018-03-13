@@ -44,6 +44,9 @@ public interface CompiledTemplate {
    * @param fragmentId
    *          Identifies the part of the template that should be rendered. In case the fragment is
    *          null, the full template will be rendered.
+   *
+   * @throws FragmentNotFoundException
+   *           if no fragment found with the specified non-null fragment id.
    */
   void render(Writer writer, Map<String, Object> vars, String fragmentId);
 
